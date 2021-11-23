@@ -110,6 +110,26 @@
             // document.getElementById("depositValue").value = "";                 // Add korar pore value ta k null kore dicchi.. 
             
         });
+
+        // Withdraw Button Handler
+        let withdrawBtn = document.getElementById("addWithdraw");
+        withdrawBtn.addEventListener('click', function(){
+            let withdrawNumber = getInputNumber("withdrawValue");
+
+            updateSpanText("currentWithdraw", withdrawNumber);
+            document.getElementById("withdrawValue").value = "";                 // Add korar pore value ta k null kore dicchi.. 
+            updateSpanText("currentBalance", -1*withdrawNumber);                // negative korte chaile -1 diye gun kore dilei hoy shudhu
+        });
+
+
+        // INPUT FUNCTION
+        function getInputNumber(id){
+            let amount = document.getElementById(id).value;
+            let amountNumber = parseFloat(amount);
+            return amountNumber;
+        }
+
+       
         // UPDATE ALL BALANCE FUNCTION
         function updateSpanText(id, depositNumber){
             let current = document.getElementById(id).innerText;    // Ekdom upore j id niye value ta nicchi innerText diye
@@ -119,20 +139,6 @@
             document.getElementById(id).innerText = totalAmount; // CUREENT BALANCE er text box a amra totalBalance ta show kortesi
         }
 
-        
-        // Withdraw Button Handler
-        let withdrawBtn = document.getElementById("addWithdraw");
-        withdrawBtn.addEventListener('click', function(){
-            let withdrawNumber = getInputNumber("withdrawValue");
-
-            // updateSpanText("currentBalance", withdrawNumber);
-        });
-
-        function getInputNumber(id){
-            let amount = document.getElementById(id).value;
-            let amountNumber = parseFloat(amount);
-            return amountNumber;
-        }
     </script>
 </body>
 
