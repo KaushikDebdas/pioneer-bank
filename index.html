@@ -87,27 +87,33 @@
             // WAY 01 using FUNCTION
             let depositNumber = getInputNumber("depositValue")
 
-            updateSpanText("currentDeposit", depositNumber)
-            document.getElementById("depositValue").value = "";                 // Add korar pore value ta k null kore dicchi.. 
-            // Current Balance
-            updateSpanText("currentBalance", depositNumber);
+            if(depositNumber < 0){
+                alert("Negative Numbers canont accept");
+            }
+            else{
+                updateSpanText("currentDeposit", depositNumber)
+                document.getElementById("depositValue").value = "";                 // Add korar pore value ta k null kore dicchi.. 
+                // Current Balance
+                updateSpanText("currentBalance", depositNumber);
 
-            // WAY 02 Normal
-            // let depositAmount = document.getElementById("depositValue").value;  // depositAmmount a amra deposit value show kortesi
-            // let depositNumber = parseFloat(depositAmount);                      // value ta k amra FLOAT a convert kortesi
+                // WAY 02 Normal
+                // let depositAmount = document.getElementById("depositValue").value;  // depositAmmount a amra deposit value show kortesi
+                // let depositNumber = parseFloat(depositAmount);                      // value ta k amra FLOAT a convert kortesi
 
-            // let currenDeposit = document.getElementById("currentDeposit").innerText;    // Ekdom upore j id niye value ta nicchi innerText diye
-            // let currentDepositNumber = parseFloat(currenDeposit);               // current value ta keo amra FLOAT a convert kortesi
-            // const totalDeposit = depositNumber + currentDepositNumber;          // sum kortesi
-            // document.getElementById("currentDeposit").innerText = totalDeposit; // CUREENT DEPOSIT er text box a amra totalDeposit ta show kortesi
-        
-            // Current Balanceeeeeeeeeeeeeeeeeeeeeeeeee
+                // let currenDeposit = document.getElementById("currentDeposit").innerText;    // Ekdom upore j id niye value ta nicchi innerText diye
+                // let currentDepositNumber = parseFloat(currenDeposit);               // current value ta keo amra FLOAT a convert kortesi
+                // const totalDeposit = depositNumber + currentDepositNumber;          // sum kortesi
+                // document.getElementById("currentDeposit").innerText = totalDeposit; // CUREENT DEPOSIT er text box a amra totalDeposit ta show kortesi
+            
+                // Current Balanceeeeeeeeeeeeeeeeeeeeeeeeee
 
-            // let currentBalance = document.getElementById("currentBalance").innerText;    // Ekdom upore j id niye value ta nicchi innerText diye
-            // let currentBalanceNumber = parseFloat(currentBalance);               // current value ta keo amra FLOAT a convert kortesi
-            // const totalBalance = depositNumber + currentBalanceNumber; 
-            // document.getElementById("currentBalance").innerText = totalBalance; // CUREENT BALANCE er text box a amra totalBalance ta show kortesi
-            // document.getElementById("depositValue").value = "";                 // Add korar pore value ta k null kore dicchi.. 
+                // let currentBalance = document.getElementById("currentBalance").innerText;    // Ekdom upore j id niye value ta nicchi innerText diye
+                // let currentBalanceNumber = parseFloat(currentBalance);               // current value ta keo amra FLOAT a convert kortesi
+                // const totalBalance = depositNumber + currentBalanceNumber; 
+                // document.getElementById("currentBalance").innerText = totalBalance; // CUREENT BALANCE er text box a amra totalBalance ta show kortesi
+                // document.getElementById("depositValue").value = "";                 // Add korar pore value ta k null kore dicchi.. 
+            }
+            
             
         });
 
